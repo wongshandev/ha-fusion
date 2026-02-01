@@ -20,6 +20,7 @@
 	let HorizontalStackButton: ComponentType;
 	let ScenesButton: ComponentType;
 	let ViewButton: ComponentType;
+	let TeslaButton: ComponentType;
 
 	onMount(async () => {
 		SidebarButton = (await import('$lib/Drawer/SidebarButton.svelte')).default;
@@ -28,6 +29,7 @@
 		HorizontalStackButton = (await import('$lib/Drawer/HorizontalStackButton.svelte')).default;
 		ScenesButton = (await import('$lib/Drawer/ScenesButton.svelte')).default;
 		ViewButton = (await import('$lib/Drawer/ViewButton.svelte')).default;
+		TeslaButton = (await import('$lib/Drawer/TeslaButton.svelte')).default;
 	});
 
 	function handleClick() {
@@ -88,6 +90,8 @@
 			<svelte:component this={HorizontalStackButton} {view} on:clicked={handleClick} />
 
 			<svelte:component this={ScenesButton} {view} on:clicked={handleClick} />
+
+			<svelte:component this={TeslaButton} {view} on:clicked={handleClick} />
 
 			<svelte:component this={ViewButton} on:clicked={handleClick} />
 		</div>
